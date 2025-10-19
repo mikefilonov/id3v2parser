@@ -115,17 +115,6 @@ The parser maintains internal buffers for partial reads:
 
 This allows parsing frames that span multiple `id3_parser_feed()` calls.
 
-### APIC Parsing
-
-When an APIC frame is detected:
-
-1. Parse text encoding byte
-2. Extract MIME type (null-terminated string)
-3. Read picture type byte
-4. Skip description (encoding-dependent null terminator)
-5. Verify PNG signature (0x89504E47...)
-6. Call `png_callback` with PNG data
-
 ## License
 
 This is example/educational code. Use and modify freely.
